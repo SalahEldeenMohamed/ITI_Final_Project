@@ -1,0 +1,15 @@
+{% extends 'hub/base.html' %}
+
+{% load static %}
+<!-- search_results.html -->
+
+{% block content %}
+<h2>Search Results</h2>
+<ul>
+    {% for doctor in doctors %}
+        <li><a href="{% url 'doctor_details' doctor.id %}">{{ doctor.name }}</a> - {{ doctor.specialization }} - {{ doctor.area }}</li>
+    {% empty %}
+        <li>No doctors found for your search.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

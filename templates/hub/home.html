@@ -1,0 +1,30 @@
+{% extends 'hub/base.html' %}
+{% load static %}
+<!-- home.html -->
+
+
+{% block content %}
+<h1>Welcome to Doctors Hub</h1>
+<p>Hello, {{ username }}! Use the search form below to find doctors.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="specialization">Specialization:</label>
+    <select name="specialization" id="specialization">
+        <option value="أسنان">أسنان</option>
+        <option value="جراحة">جراحة</option>
+        <option value="عيون">عيون</option>
+        <!-- Add more specializations as needed -->
+    </select>
+
+    <label for="area">Area:</label>
+    <select name="area" id="area">
+        <option value="مدينة نصر">مدينة نصر</option>
+        <option value="المهندسين">المهندسين</option>
+        <option value="الزمالك">الزمالك</option>
+        <!-- Add more areas as needed -->
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+{% endblock %}

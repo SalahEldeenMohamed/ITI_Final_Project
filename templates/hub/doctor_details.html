@@ -1,0 +1,11 @@
+{% extends 'hub/base.html' %}
+{% load static %}
+<!-- doctor_details.html -->
+
+
+{% block content %}
+<h2>Doctor Details</h2>
+<p><strong>Name:</strong> {{ doctor.name }}</p>
+<p><strong>Phone:</strong> {{ doctor.phone }}</p>
+<p><strong>Address:</strong> {{ doctor.address }}</p>
+{% endblock %}
